@@ -1,0 +1,31 @@
+{
+    "Name": "Nextracer1.TitanGuessr",
+    "Description": "geoguessr if it was epic",
+    "Version": "1.0.0",
+    "LoadPriority": 1,
+
+    "ConVars": [
+        {
+            "Name": "guessr_round",
+            "DefaultValue": "1"
+        }
+    ],
+
+    "Scripts": [
+        {
+            "Path": "sh_titan_guessr.nut",
+            "RunOn": "( CLIENT || SERVER ) && SP",
+
+            "ServerCallback": {
+                "After": "GuessrInit"
+            },
+            "ClientCallback": {
+                "After": "GuessrInit"
+            }
+        }
+    ],
+
+    "Localisation": [
+            "resource/titanguessr_localisation_english.txt"
+    ]
+ }
