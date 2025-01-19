@@ -1,11 +1,11 @@
 # TitanGuessr
 
-A Northstar mod for hosting GeoGuessr games in Titanfall 2's campaign. 
-!!! *If you're a player downloading this, the scripts contain spoilers* !!!
+A Northstar mod for hosting GeoGuessr games in Titanfall 2's campaign.<br>
+!!! *If you're a player downloading this, the scripts contain spoilers* !!!<br><br>
 
 
 ## how install
-Like any other Northstar mod - just drag the TitanGuessr folder into `Titanfall2\R2Northstar\mods`.
+Like any other Northstar mod - just drag the TitanGuessr folder into `Titanfall2\R2Northstar\mods`.<br><br>
 
 ## how use
 * Use the console variable `guessr_round` to select rounds. This convar will also automatically increment if you find a location.
