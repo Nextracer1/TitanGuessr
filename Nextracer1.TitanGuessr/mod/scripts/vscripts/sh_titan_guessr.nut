@@ -16,29 +16,29 @@ global struct Round
     "sp_sewers1",
     "sp_timeshift_spoke02",
     "sp_beacon_spoke0",
-    "sp_sewers1",
     "sp_skyway_v1",
     "sp_boomtown",
+    "sp_skyway_v1",
     "sp_beacon",
     "sp_tday",
-    "sp_skyway_v1",
+    "sp_sewers1",
     "sp_beacon_spoke0"   ]
 
  global array<vector> locations = [ 
     <10105.51, -1051.07, 6461.09>, 
-    Vector( -1388.07, -3677.17, -3051.97 ), 
+    < -1388.07, -3677.17, -3051.97>, 
     <12111.38, -2976.18, 991.26>, 
-    Vector( -4682.75, 4092.43, 1227.92 ), // 
+    < -4682.75, 4092.43, 1227.92>, 
     <10434.30, 1542.07, 332.03>, 
     <6246.36, 2764.29, 11498.30>,
-    Vector( -2757.77, 11100.29, 591.38 ),
-    Vector( -1516.09, 6130.01, -248.11 ), 
+    < -2757.77, 11100.29, 591.38>,
+    <12583.43, 8617.51, 4745.39>, 
+    < -2258.78, 12029.29, 2484>,
     <11703.93, 11387.08, 6219.35>,
-    Vector( -2258.78, 12029.29, 2484 ),
-    <3940.93, -1312.24, 4407.14>, // 
-    Vector( -2755.38, 1944.57, 380.03 ), //
-    <12583.43, 8617.51, 4745.39>, //
-    Vector( -1141.60, 3615.72, 487.55 ) ] 
+    <3940.93, -1312.24, 4407.14>, 
+    < -2755.38, 1944.57, 380.03>, 
+    < -1516.09, 6130.01, -248.11>
+    < -1141.60, 3615.72, 487.55> ] 
  
 
 void function GuessrInit()
@@ -71,10 +71,8 @@ void function StartGuessring( entity player )
         string targetMap = maps[round]
         vector targetLocation = locations[round] 
     
-        // check map
         if ( GetMapName() == targetMap )
         {
-            // if map is good, now start checking for location
             thread LocationThread( player, targetLocation, round )
         }
     }
