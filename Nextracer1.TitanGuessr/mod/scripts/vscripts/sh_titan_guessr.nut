@@ -68,25 +68,19 @@ void function StartGuessring( entity player )
     // round exists:
     else 
     {
-        string targetMap = maps[round]
-        vector targetLocation = locations[round] 
-    
-        if ( GetMapName() == targetMap )
+        if ( GetMapName() == maps[round] )
         {
-            thread LocationThread( player, targetLocation, round )
+            thread LocationThread( player, locations[round] )
         }
     }
 }
 
 
 
-void function LocationThread( entity player, vector target, int round )
+void function LocationThread( entity player, vector target )
 {
-    bool found = false
-
-    while ( !found )
+    while ( Distance( player.GetOrigin(), target ) > 185 )
     {
-        found = ( Distance( player.GetOrigin(), target ) < 185 )
         wait 0.1
     }
 
@@ -96,7 +90,7 @@ void function LocationThread( entity player, vector target, int round )
 
     Dev_PrintMessage( player, "#FOUND_LOCATION", "", 1000000 )
 
-    entity bloke = CreatePropScript( PILOT_GHOST_MODEL, <locations[round].x, locations[round].y, locations[round].z - 55>, -player.GetAngles(), 0 )
+    entity bloke = CreatePropScript( PILOT_GHOST_MODEL, <target.x, target.y, target.z - 55>, -player.GetAngles(), 0 )
     SetTeam( bloke, player.GetTeam() )
     Highlight_SetFriendlyHighlight( bloke, "enemy_sonar" ) // interact_object_los_line 
 
